@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style>
+		html, *,
+		*::before,
+		*::after{
+			box-sizing: border-box;
+		}
+		body{
+			background: #213;
+
+		}
+	.parent{
+		text-align: center;
+		
+	}
+main{
+		background: lavender;
+		height: 70vh;
+		width: 100%;
+}
+form{
+	padding-top:10vh ;
+}
+header{
+	color: lavender;
+	margin-bottom: 10vh;
+	font: caption;
+	font-size: 1.6rem;
+	font-weight: 700;
+	border-bottom: 5px solid lavender;
+	display: inline-block;
+}
+.display{
+	width: 80%;
+	height: 10vh;
+	border: 1px solid #999;
+	border-radius: 1rem;
+}
+section{
+	box-shadow: 2px 2px 4px 2px rgb(0, 0, 0.1);
+	background: #1e2d4c /*#1b1d1c*/;
+	display: inline-block;
+	width: 80vw;
+}
+.first input, .fifth input{
+	width: 26%;
+height: 5vh;
+font-size: 1.2rem;
+}
+.second input, .third input, .forth input{
+	width: 19.35%;
+height: 5vh;
+
+}
+.equal{
+	background: darkgreen;
+	color: lavender;
+}
+.del{
+background: darkred;
+	color: lavender;
+}
+.ac{
+background: #213;
+	color: lavender;	
+}
+.ac:hover, .del:hover, .equal:hover{
+	cursor: pointer;
+}  
+footer{
+	color: lavender;
+	padding:1rem;
+	padding-bottom: 1rem;
+}
+footer a{
+color: white;
+margin-right: 1rem;
+font-family: monospace;
+font-size: 1rem;
+}
+
+	</style>
+</head>
+<body>
+<div class="parent">
+
+<header>GT's Simple Calculator.</header>
+
+<main>
+	<form>
+		<section>
+		<div class="dashboard">
+			<input type="text" class="display" name="display">
+		</div>
+<div class="first">
+	<input type="button" name="" value="+" onclick="display.value += '+'">
+	<input type="button" name="" class="del" value="DEL" onclick="display.value = display.value.toString().slice(0,-1)">
+	 <input type="button" name="" class="ac" value="AC" onclick="display.value = ''">
+	</div>	
+
+<div class="second">
+	<input type="button" name="" value="-" onclick="display.value += '-'">
+	<input type="button" name="" value="1" onclick="display.value += '1'">
+	 <input type="button" name="" value="2" onclick="display.value += '2'">
+	 <input type="button" name="" value="3" onclick="display.value += '3'">
+	</div>	
+<div class="third">
+	<input type="button" name="" value="*" onclick="display.value += '*'">
+	<input type="button" name="" value="4" onclick="display.value += '4'">
+	 <input type="button" name="" value="5" onclick="display.value += '5'">
+	 <input type="button" name="" value="6" onclick="display.value += '6'">
+	</div>	
+<div class="forth">
+	<input type="button" name="" value="/" onclick="display.value += '/'">
+	<input type="button" name="" value="7" onclick="display.value += '7'">
+	 <input type="button" name="" value="8" onclick="display.value += '8'">
+	 <input type="button" name="" value="9" onclick="display.value += '9'">
+	</div>	
+<div class="fifth">
+	<input type="button" name="" value="0" onclick="display.value += '0'">
+	 <input type="button" name="" value="." onclick="display.value += '.'">
+	<input type="button" name="" value="=" class="equal">
+	 
+	</div>	
+</section>
+</form>
+</main>
+	
+
+</div>
+<footer>
+	You can follow and reach out to the developer(GT) on: <br>
+	<a href="https://www.facebook.com/profile.php?id=61550058058534&mibextid=ZbWKwL">Facebook</a>
+	<a href="https://whatsapp.com/channel/0029VaAgetCAzNbtUIy6hu3y">WhatsApp</a>
+	<a href="https://www.Instagram.com/Onahgeraldleo">Instagram</a>
+	<a href="https://twitter.com/Leogerald14?t=M-eiwypthyjan0SOyogTw&s=09">X</a>
+	<a href="mailto:gtoleo21@gmail.com">Email</a>
+</footer>
+
+<script>
+let equal = document.querySelector(".equal");	
+let display = document.querySelector(".display");
+equal.addEventListener("click", calculate);
+function calculate(event){
+	if(display.value.length > 0){
+		display.value = eval(display.value);
+	}
+    else if(display.value.length == 0){
+		display.value = "";
+	}
+}	
+
+
+</script>
+</body>
+</html>
